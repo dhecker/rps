@@ -1,0 +1,54 @@
+body {
+    background: white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+h1 {
+    font-size: 3em;
+    text-align: center;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.choices-wrapper {
+    text-align: center;
+    border: 10 solid black;
+   }
+.choices {
+    padding: 30px;
+    margin: 10px;
+    font-size: 16px;
+    width: 150px;
+    text-align: center;
+    box-sizing: border-box; 
+    outline: none;
+  }
+
+.choices:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+.player-icon {
+ 
+    width: 80px;
+    height: 80px;
+
+  }
+
+  .scoreboard-wrapper {
+    display: block;
+ 
+    text-align: center;
+   }
+ 
+
+  .scores {
+    display: inline-block;
+    font-size: 80px;
+    line-height: 80px;
+  }
+
+  .messages {
+    font-size: 20px;
+    margin: 10px;
+    border: 1px;
+    height:100px;
+    white-space: pre;
+  }

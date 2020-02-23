@@ -3,117 +3,32 @@
   <head>
     <meta charset="utf-8"/>
     <title>Functions: Task 2</title>
-
+    <script src="rps.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
 
-  <body>
+  <body onload="playGame()">
 
+<h1> Rock, Paper, Scissors!</h1>
+<div class="choices-wrapper">
+    <img class="choices" id="rock" src="images/rock.png">
+    <img class="choices" id="paper" src="images/toilet-paper.png">
+    <img class="choices" id="scissors" src="images/scissors.png">
+</div>
 
+<div class="scoreboard-wrapper">
+    <div class="messages" id="messages"></div>
+    <div class="scoreboard">
+        <img class="player-icon" id="rock" src="images/human-head.png">
+        <div class="scores" id="player-score">: 0</div>
+    </div>
+    <div class="scoreboard">
+        <img class="player-icon" id="scissors" src="images/r2-d2.png"><div class="scores" id="computer-score">: 0</div>
+    </div>
+</div>
 
   </body>
-  <script>
-
-
-function computerPlay(){
-
-    switch(Math.floor  (  ((Math.random() * 3) + 1) )) {
-      case 1:
-      computerChoice = "rock";
-      break;
-      case 2:
-      computerChoice = "paper";
-      break;
-      case 3:
-      computerChoice = "scissors";
-      break;
-    }
-      return computerChoice
-}
-
-function playRound() {
-
-    const playerInput = prompt();
-    var playerSelection = playerInput.toLowerCase();
-    const computerSelection = computerPlay();
-    console.log("You chose " + playerSelection + ".\n\Computer chose " + computerSelection + ".");
-
-
-
-        if (playerSelection == "rock" && computerSelection == "paper") {
-          results = ["Lose", playerSelection, computerSelection]
-        }
-        else if (playerSelection == "rock" && computerSelection == "scissors") {
-          results = ["Win", playerSelection, computerSelection]
-        }
-        else if (playerSelection == "paper" && computerSelection == "rock") {
-          results = ["Win", playerSelection, computerSelection]
-        }
-        else if (playerSelection == "paper" && computerSelection == "scissors") {
-          results = ["Lose", playerSelection, computerSelection]
-        }
-        else if (playerSelection == "scissors" && computerSelection == "paper") {
-          results = ["Win", playerSelection, computerSelection]
-        }
-        else if (playerSelection == "scissors" && computerSelection == "rock") {
-          results = ["Lose", playerSelection, computerSelection]
-        }
-        else if (playerSelection == computerSelection) {
-          results = ["Tie", playerSelection, computerSelection]
-        }
-        else {
-          results = ["error","error","error"];
-        }
-
-      return results;
- }
-
-function game() {
-  console.log("Here we go.");
-  var rounds;
-  var playerScore = 0
-  var computerScore = 0
   
-  for (rounds = 1; rounds < 6; rounds++) {
-    console.log("\n\This is round " + rounds);
-    
-    playRound();
-
-      if (results[0] == 'Tie') {
-       console.log ("This round is a tie.")
-      }
-      else if (results[0] == 'Win') {
-        console.log ("You win this round! " + results[1] + " beats " + results [2] + ".")
-        playerScore++;
-      }
-      else if (results[0] == "Lose") {
-        console.log ("You lose this round! " + results[2] + " beats " + results [1] + ".")
-        computerScore++;
-      }
-      else {
-        console.log ("Something went wrong.")
-      }
-
-      console.log("Current score: You have " + playerScore + " and computer has " + computerScore + " points.")
-
-  }
-
-  if (playerScore == computerScore) {
-    console.log("\nThats it! This match is a tie. Try again!\n");
-  }
-  else if (playerScore > computerScore) {
-    console.log("\nYou win the match!\n");
-  }
-  else if (computerScore > playerScore) {
-    console.log("\nThe computer won this match!\n");
-  }
-} 
-game()
-
-
-
-
-
-
-  </script>
 
 </html>
+ 
